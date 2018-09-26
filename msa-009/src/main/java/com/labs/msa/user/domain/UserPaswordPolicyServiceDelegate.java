@@ -18,7 +18,7 @@ public class UserPaswordPolicyServiceDelegate {
     @HystrixCommand(fallbackMethod = "getPolicyConformance_Fallback")
     public boolean getPolicyConformance(String password) {
  
-        String response = restTemplate.exchange("http://localhost:8098//{password}", HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, password).getBody();
+        String response = restTemplate.exchange("http://localhost:9099//{password}", HttpMethod.GET, null, new ParameterizedTypeReference<String>() {}, password).getBody();
  
         System.out.println("Response Received as " + response + " -  " + new Date());
  
